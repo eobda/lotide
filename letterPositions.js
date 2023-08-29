@@ -28,12 +28,12 @@ const letterPositions = function(sentence) {
   const results = {};
 
   // result should look like: { a: [0, 1, 2], b: [3, 4, 5] }
-  for (let letter of sentence) {
-    if (letter !== " ") {
-      if (results[letter]) {
-        results[letter].push(sentence[letter]);
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== " ") {
+      if (results[sentence[i]]) {
+        results[sentence[i]].push(i);
       } else {
-        results[letter] = [ sentence[letter] ];
+        results[sentence[i]] = [ i ];
       }
     }
   }
@@ -43,3 +43,4 @@ const letterPositions = function(sentence) {
 
 // TEST CODE
 assertArraysEqual(letterPositions("abcd")["a"], [0]);
+assertArraysEqual(letterPositions("abcd")["c"], [2]);
