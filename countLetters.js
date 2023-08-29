@@ -8,10 +8,16 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(sentence) {
-  let result = {};
-  let text = sentence.split(" ").join("").toLowerCase();
+  const result = {};
+  const text = sentence.split(" ").join("").toLowerCase();
 
-  console.log(text);
+  for (const letter of text) {
+    if (result[letter]) {
+      result[letter] += 1;
+    } else {
+      result[letter] = 1;
+    }
+  }
 
   return result;
 }
@@ -20,4 +26,5 @@ const countLetters = function(sentence) {
 const testResult = countLetters("lighthouse in the house");
 assertEqual(testResult["l"], 1);
 assertEqual(testResult["h"], 4);
-assertEqual(testResult["e"], 2); // should fail
+assertEqual(testResult["e"], 3);
+assertEqual(testResult["n"], 1);
