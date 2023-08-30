@@ -33,11 +33,13 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const assertObjectsEqual = function(object1, object2) {
-  if (eqObjects(object1, object2)) {
-    console.log(`✅ Assertion Passed: ${object1} === ${object2}`);
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect;
+
+  if (eqObjects(actual, expected)) {
+    console.log(`✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`❌ Assertion Failed: ${object1} !== ${object2}`);
+    console.log(`❌ Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
 
@@ -52,10 +54,5 @@ const toaster = {
   colour: "silver",
   timer: true
 };
-const otherMicrowave = {
-  colour: "silver",
-  power: 1000,
-  timer: true
-}
-assertObjectsEqual(microwave, otherMicrowave);
-assertObjectsEqual(microwave, toaster);
+assertObjectsEqual(microwave, {power: 1000, colour: "silver", timer: true}); // should pass
+assertObjectsEqual(toaster, {power: 1000, colour: "silver", timer: true}); // should fail
