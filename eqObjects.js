@@ -12,7 +12,7 @@ const eqArrays = function(arr1, arr2) {
 
     return true;
   }
-}
+};
 
 const assertEqual = function(actual, expected) {
 
@@ -63,8 +63,8 @@ const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
 assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
 
-const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
 
-const differentColorShirtObject= { size: "medium", colors: ["red", "white"] }; // test to ensure eqArrays is working inside eqObjects
+const differentColorShirtObject = { size: "medium", colors: ["red", "white"] }; // test to ensure eqArrays is working inside eqObjects
 assertEqual(eqObjects(multiColorShirtObject, differentColorShirtObject), false);
