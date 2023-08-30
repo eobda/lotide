@@ -15,21 +15,18 @@ const eqObjects = function(object1, object2) {
   const keys2 = Object.keys(object2).sort();
 
   // default return is false
-  let match = false;
-
   // should only return true if objects are the same length!
-  if (keys1.length === keys2.length) {
-    for (let i = 0; i < keys1.length; i++) {
-      if (keys1[i] === keys2[i] && object1[keys1] === object2[keys2]) {
-        match = true;
-        // will only stay true if all objects match
-      } else {
-        match = false;
+  if (keys1.length !== keys2.length) {
+    return false;
+  } else {
+    for (const key of keys1) {
+      if (object1[key] !== object2[key]) {
+        return false;
       }
     }
   }
 
-  return match;
+  return true;
 };
 
 // TEST CODE
