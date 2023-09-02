@@ -8,14 +8,16 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKey = function(object, callback) {
-// Scan the object and return the FIRST key for which the callback returns a truthy VALUE
-// If key is not found, should return undefined
-  // const keys = Object.keys(object);
   for (const key in object) {
-    console.log("callback:", callback(object[key]));
-    if (object[key] === callback) {
+    // Look for the FIRST key for which the callback returns a truthy value
+    if (callback(object[key])) {
+      // Return key of that callback
+      return key;
     }
   }
+
+  // If key is not found, return undefined
+  return undefined;
 };
 
 // test code
@@ -26,5 +28,13 @@ const testCode = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2) // => "noma"
+}, x => x.stars === 2); // => "noma"
 assertEqual(testCode, "noma");
+
+const testCode2 = findKey({
+  "Stilton": { country: "England" },
+  "Gruyere": { country: "Switzerland" },
+  "Brie": { country: "France" },
+  "Manchego": { country: "Spain" }
+}, x => x.country[0] === "S");
+assertEqual(testCode2, "Gruyere");
