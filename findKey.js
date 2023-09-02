@@ -9,12 +9,11 @@ const assertEqual = function(actual, expected) {
 
 const findKey = function(object, callback) {
 // Scan the object and return the FIRST key for which the callback returns a truthy VALUE
-// If key is found, should return undefined
+// If key is not found, should return undefined
   // const keys = Object.keys(object);
   for (const key in object) {
+    console.log("callback:", callback(object[key]));
     if (object[key] === callback) {
-      console.log("callback:", callback);
-      console.log("object[key]:", object[key]);
     }
   }
 };
