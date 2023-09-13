@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@eobda/lotide",
   "version": "1.0.0",
-  "description": "Lotide library for LHL Web Flex Program",
-  "main": "index.js",
+  "description": "A mini clone of Lodash",
+  "main": "README.md",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/eobda/lotide.git"
   },
-  "author": "Maddie Lee @eobda",
+  "author": {
+    "name": "Maddie Lee",
+    "email": "lee.maddie@gmail.com",
+    "url": "https://github.com/eobda"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eobda/lotide/issues"
