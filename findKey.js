@@ -1,11 +1,11 @@
-const assertEqual = function(actual, expected) {
+// const assertEqual = function(actual, expected) {
 
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+//   if (actual === expected) {
+//     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
+//   } else {
+//     console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
+//   }
+// };
 
 const findKey = function(object, callback) {
   for (const key in object) {
@@ -21,20 +21,22 @@ const findKey = function(object, callback) {
 };
 
 // test code
-const testCode = findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 2); // => "noma"
-assertEqual(testCode, "noma");
+// const testCode = findKey({
+//   "Blue Hill": { stars: 1 },
+//   "Akaleri":   { stars: 3 },
+//   "noma":      { stars: 2 },
+//   "elBulli":   { stars: 3 },
+//   "Ora":       { stars: 2 },
+//   "Akelarre":  { stars: 3 }
+// }, x => x.stars === 2); // => "noma"
+// assertEqual(testCode, "noma");
 
-const testCode2 = findKey({
-  "Stilton": { country: "England" },
-  "Gruyere": { country: "Switzerland" },
-  "Brie": { country: "France" },
-  "Manchego": { country: "Spain" }
-}, x => x.country[0] === "S");
-assertEqual(testCode2, "Gruyere");
+// const testCode2 = findKey({
+//   "Stilton": { country: "England" },
+//   "Gruyere": { country: "Switzerland" },
+//   "Brie": { country: "France" },
+//   "Manchego": { country: "Spain" }
+// }, x => x.country[0] === "S");
+// assertEqual(testCode2, "Gruyere");
+
+module.exports = findKey;

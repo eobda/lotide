@@ -22,31 +22,33 @@ const flatten = function(array) {
   return flattenedArray;
 }
 
-const assertArraysEqual = function(arr1, arr2) {
+// const assertArraysEqual = function(arr1, arr2) {
 
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
+//   if (eqArrays(arr1, arr2)) {
+//     console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
+//   } else {
+//     console.log(`❌ Assertion Failed: ${arr1} !== ${arr2}`);
+//   }
+// };
 
-const eqArrays = function(arr1, arr2) {
-  let arrayMatch = false;
+// const eqArrays = function(arr1, arr2) {
+//   let arrayMatch = false;
 
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] === arr2[i]) {
-        arrayMatch = true;
-      } else {
-        arrayMatch = false;
-      }
-    }
-  }
+//   if (arr1.length === arr2.length) {
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr1[i] === arr2[i]) {
+//         arrayMatch = true;
+//       } else {
+//         arrayMatch = false;
+//       }
+//     }
+//   }
 
-  return arrayMatch;
-}
+//   return arrayMatch;
+// }
 
 // TEST CODE
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten([['a', 'b'], [3], 'd']), ['a', 'b', 3, 'd']);
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([['a', 'b'], [3], 'd']), ['a', 'b', 3, 'd']);
+
+module.exports = flatten;
