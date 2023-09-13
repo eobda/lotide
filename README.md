@@ -31,6 +31,8 @@ The following functions are currently implemented:
 * `middle`: Returns the middle value(s) of a given array.
 * `countLetters`: Returns the number of times each letter of a given string appears in that string.
 * `countOnly`: Returns the number of times certain elements appear in a given array.
+* `eqArrays`: Compares two arrays and returns true for a perfect match.
+* `eqObjects`: Compared two objects and returns true for a perfect match.
 * `findKey`: Returns the first key of an object that matches a given search function.
 * `findKeyByValue`: Returns the key of an object for a given value.
 * `flatten`: Flattens an array with nested arrays into a single array.
