@@ -1,28 +1,3 @@
-const assertArraysEqual = function(arr1, arr2) {
-
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  let arrayMatch = false;
-
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] === arr2[i]) {
-        arrayMatch = true;
-      } else {
-        arrayMatch = false;
-      }
-    }
-  }
-
-  return arrayMatch;
-};
-
 /*
 Implement middle which will take in an array and return the middle-most element(s) of the given array.
 */
@@ -51,8 +26,4 @@ const middle = function(array) {
   return middleOfArray;
 };
 
-// TEST CODE
-assertArraysEqual(middle([1]), [1]); // should fail
-assertArraysEqual(middle([1, 2]), [1, 2]); // should fail
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+module.exports = middle;
