@@ -40,3 +40,19 @@ describe("Arrays as Values tests", () => {
   });
 
 });
+
+describe("Nested objects", () => {
+
+  it("returns true for comparing two identical nested objects", () => {
+    assert.strictEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+  });
+
+  it("returns false for comparing two non-identical nested objects", () => {
+    assert.strictEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+  });
+
+  it("returns false for comparing a nested object and a non-nested object", () => {
+    assert.strictEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+  });
+
+});
