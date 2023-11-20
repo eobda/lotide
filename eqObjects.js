@@ -20,7 +20,9 @@ const eqObjects = function(object1, object2) {
       } else if ((typeof object1[key] === 'object' && typeof object2[key] !== 'object') || (typeof object1[key] !== 'object' && typeof object2[key] === 'object')) {
         return false;
       } else if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
-        if(!eqObjects(object1[key], object2[key])) {
+        if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {
+          return false;
+        } else if (!eqObjects(object1[key], object2[key])) {
           return false;
         }
       } else if (object1[key] !== object2[key]) {
