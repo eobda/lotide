@@ -47,6 +47,10 @@ describe("Nested objects", () => {
     assert.strictEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
   });
 
+  it("returns true for comparing two identical nested objects with 3 levels", () => {
+    assert.strictEqual(eqObjects({ a: { z: { i: 7 } }, b: 2 }, { a: { z: { i: 7 } }, b: 2 }), true);
+  });
+
   it("returns false for comparing two non-identical nested objects", () => {
     assert.strictEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
   });
